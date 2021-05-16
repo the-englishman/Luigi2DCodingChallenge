@@ -31,7 +31,21 @@ namespace LuigiChallenge
 
         public string GoHome2D(int[][] map)
         {
-            throw new NotImplementedException();
+            string directions = "";
+            for (int row = 0; row < map.Length; row++)
+            {
+                for (int col = 0; col < map[row].Length-1; col++)
+                {
+                    if(map[row][col] == 0 && map[row][col + 1] == 0)
+                    {
+                        directions += "Right ";
+                    }
+                }   if (row < map.Length-1)
+                {
+                    directions += "Down ";
+                }
+            }
+            return directions.Trim();
         }
     }
 }
